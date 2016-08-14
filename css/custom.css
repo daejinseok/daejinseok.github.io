@@ -1,10 +1,14 @@
+@import url(http://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
 body {
-  font-family: "Noto Sans DemiLight", "Malgun Gothic";
-      font-size: 13pt;
-    line-height: 22pt;
-    letter-spacing: .8px;
+  font-family: 'Spoqa Han Sans', 'Malgun Gothic';
 }
 
+
 i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+article blockquote {
   font-style: normal;
 }
