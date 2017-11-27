@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    팁1. 점명령을 만나다 | 대진!
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://daejinseok.github.io/post/2014-05-27-pvim-101-tip1-meet_the_dot_command/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="https://daejinseok.github.io/index.xml" rel="alternate" type="application/rss+xml" title="대진!" />
+  <link href="https://daejinseok.github.io/index.xml" rel="feed" type="application/rss+xml" title="대진!" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="https://daejinseok.github.io/">대진!</a></h1>
+        <h2>아름다운 부인, 이쁜 딸, 멋진 아들 그리고 평범한 아빠</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          <li><a href="https://www.facebook.com/daejin.seok.7" target="_blank">Facebook</a></li>
+          <li><a href="https://github.com/daejinseok" target="_blank">GitHub</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>팁1. 점명령을 만나다</h1>
+      <div class="meta">
+        May 27, 2014 &nbsp;
+        
+          #<a href="/tags/vim">vim</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>원문 <a href="http://media.pragprog.com/titles/dnvim/vim.pdf">Practical Vim - Tip 1 Meet the Dot Command</a></p>
+
+<p>점명령(Dot Command)은 마지막 변경을 반복합니다. 이것은 Vim에서 가장 강력하고 유용한 명령입니다.</p>
+
+<p>Vim의 도움말에서는 점명령을 단순히 “마지막 변경을 반복”이라고 적혀있습니다. 하지만 이와 같은 단순한 설명으로는 점명령의 핵심을 알 수 없습니다. 우선 변경이라는 것이 무엇인지 알아야 합니다.</p>
+
+<p><strong><em>마지막 변경</em></strong>이라는 것은 하나의 문자를 변경하는 것일 수도 있고, 라인 전체, 혹은 파일 전체를 변경하는 것일 수도 있습니다.</p>
+
+<pre><code class="language-python">Line one
+Line two
+Line three
+Line four
+</code></pre>
+
+<p>x 명령은 커서 아래 문자를 삭제합니다. 여기에서 점명령을 사용하면 <strong><em>마지막 변경</em></strong>은 커서 아래 문자를 삭제하라고 말하는 것입니다. 변경한 것을 취소하기 위해 u 키를 여러 번 누르면 파일은 원래 상태로 돌릴 수 있습니다.</p>
+
+<p><img src="../img/pvim-000-tip1-1.png" alt="점명령 x 예제" /></p>
+
+<p>dd 명령 또한 삭제를 수행하지만, 라인 전체를 삭제합니다. 만약 dd 입력한 후 점명령을 사용한다면 <strong><em>마지막 변경</em></strong>은 라인을 삭제하라고 지시하는 것입니다.</p>
+
+<p><img src="../img/pvim-000-tip1-2.png" alt="점명령 dd 예제" /></p>
+
+<p>마지막으로 &gt;G 명령은 현재 라인에서 파일 끝까지 들여쓰기를 증가시킵니다. 만약 이 명령 뒤에 점명령이 따라온다면, <strong><em>마지막 변경</em></strong>은 현재 위치에서 파일 끝까지 들여쓰기를 증가시키도록 합니다. 예제에서는 차이점을 강조하기 위해 두 번째 라인에 커서를 두고 시작할 것입니다.</p>
+
+<p><img src="../img/pvim-000-tip1-3.png" alt="점명령 &gt; 예제" /></p>
+
+<h2 id="점명령은-작은-매크로입니다">점명령은 작은 매크로입니다.</h2>
+
+<p>x, dd 그리고 &gt; 명령 모두 명령모드에서 실행되고, 점명령에 의해 <strong><em>마지막 변경</em></strong>이 반복되었습니다. 하지만 <strong><em>마지막 변경</em></strong>에 대한 더 정확한 의미는 입력모드로 들어가는 순간부터 명령모드로 돌아오기까지 변경을 의미합니다. 따라서 점명령은 앞서 보여드린 명령 반복 외에 입력모드에서 명령모드로 돌아오기까지 변경을 기록한 것을 반복할 수 있는 작은 매크로입니다.</p>
+
+<h2 id="주의">주의</h2>
+
+<p>책을 읽고 제가 이해한 것을 적은 글입니다. 원문과는 차이가 있습니다.</p>
+
+<h2 id="수정이력">수정이력</h2>
+
+<ul>
+<li>2014.05.27 최초작성</li>
+<li>2016.08.14 맞춤법 및 주의 추가</li>
+</ul>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="https://daejinseok.github.io/post/2014-05-27-pvim-100-ch1/" rel="prev">1장. Vim으로 가는 길</a></span>
+    
+    
+      <span class="next"><a href="https://daejinseok.github.io/post/2014-05-28-pvim-102-tip2-dont_repeat_yourself/" rel="next">팁2. 반복하지마세요.</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      <img src="/images/totoro.jpg" width="64" height="64"><br>
+      Written by daejin
+    </div>
+  </footer>
+
+	
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-XXXXXXXX-X', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
